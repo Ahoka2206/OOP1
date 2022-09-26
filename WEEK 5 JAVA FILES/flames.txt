@@ -1,0 +1,75 @@
+import java.util.*;
+
+class ImpFlames implements InterfaceFlames{
+	private String name1;
+	private String name2;
+
+	public ImpFlames(){}
+
+	public int countLetters(String name1, String name2){
+		name1 = name1.toLowerCase();
+		name2 = name2.toLowerCase();
+		int count = 0;
+
+		StringBuffer sb1 = new StringBuffer(name1);
+		StringBuffer sb2 = new StringBuffer(name2);
+		char c, d;
+
+		for (int i = sb1.length() - 1; i > 0; i--){
+			c = sb1.charAt(i);
+			for (int j = sb2.length() - 1; j > 0; j--){
+				d = sb2.charAt(j);
+				if (c == d)
+					count++;
+				}
+		}
+		return count;
+	}
+
+	public char flames(int numLetters){
+		char answer;
+		if(numLetters <= 6){
+			numLetters = numLetters %6;
+		}
+
+
+		switch(numLetters){
+			case 1: answer = 'F' ;
+					  break;
+			case 2: answer = 'L';
+					  break;
+			case 3: answer = 'A';
+					  break;
+			case 4: answer = 'M';
+					  break;
+			case 5: answer = 'E';
+					  break;
+			case 6: answer = 'S';
+					  break;
+			default : answer = 'F';
+					  break;
+		}
+		return answer;
+	}
+
+	public String letterEquivalent(char flames){
+		String answer;
+		switch(flames){
+			case 'F': answer = "Friends" ;
+					  break;
+			case 'L': answer = "Lovers";
+					  break;
+			case 'A': answer = "Affection";
+					  break;
+			case 'M': answer = "Marriage";
+					  break;
+			case 'E': answer = "Enemies";
+					  break;
+			case 'S': answer = "Sweethearts";
+					  break;
+			default : answer = "Friends";
+					  break;
+		}
+		return answer;
+	}
+}

@@ -1,0 +1,12 @@
+public class Sample{
+	private int count;
+	
+	public void display(){
+		System.out.println(count);
+	}
+	
+	public void display(){
+		return count;
+	}
+	
+}
